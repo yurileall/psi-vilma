@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vilma Marinho | Psicóloga Clínica em Salvador</title>
+<meta name="description" content="Psicoterapia acolhedora no Caminho das Árvores, Salvador. Relacionamentos, autoconhecimento e momentos difíceis. Atendimento a partir das 7h e aos sábados. Espaço seguro para pessoas LGBTQ+ e trans.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --estudio: #F3F2F0;
+    --papel: #FFFFFF;
+    --ameixa: #4A1631;
+    --batom: #8C2C55;
+    --ouro: #B8862B;
+    --madeira: #6B4128;
+    --tinta: #22141B;
+    --tinta-suave: #5E4C55;
+    --linha: #DCD6D9;
+
+    --f: "Bricolage Grotesque", system-ui, sans-serif;
+    --gutter: clamp(16px, 5vw, 72px);
+    --max: 1240px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--estudio);
+    color: var(--tinta);
+    font-family: var(--f);
+    font-optical-sizing: auto;
+    font-weight: 350;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  :focus-visible {
+    outline: 3px solid var(--ouro);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .wrap {
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  h1, h2, h3 {
+    font-weight: 720;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+    margin: 0;
+    color: var(--ameixa);
+  }
+  h2 { font-size: clamp(2.25rem, 5vw, 3.75rem); }
+  h3 { font-size: 1.5rem; letter-spacing: -0.02em; line-height: 1.15; }
+  p { margin: 0; }
+
+  /* Botão WhatsApp */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .6em;
+    background: var(--batom);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.0625rem;
+    padding: .95em 1.5em;
+    border-radius: 999px;
+    transition: background .2s ease, transform .2s ease;
+  }
+  .btn:hover { background: var(--ameixa); }
+  .btn:active { transform: scale(.98); }
+  .btn svg { width: 1.25em; height: 1.25em; flex: none; }
+  .btn--claro { background: #fff; color: var(--ameixa); }
+  .btn--claro:hover { background: var(--estudio); }
+
+  /* Topo */
+  .topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 1.25rem;
+  }
+  .marca {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.125rem;
+    letter-spacing: -0.02em;
+    color: var(--ameixa);
+    line-height: 1.2;
+  }
+  .marca span { display: block; font-weight: 400; font-size: .875rem; color: var(--tinta-suave); letter-spacing: 0; }
+  .topo .btn { font-size: .9375rem; padding: .7em 1.15em; }
+
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: end;
+    gap: clamp(1rem, 4vw, 4rem);
+    padding-top: clamp(1rem, 4vw, 3rem);
+  }
+  .hero__texto { padding-bottom: clamp(2.5rem, 7vw, 6rem); }
+  .hero h1 {
+    font-size: clamp(2.75rem, 7.4vw, 6.25rem);
+    font-weight: 780;
+    letter-spacing: -0.05em;
+    line-height: .95;
+  }
+  .hero__sub {
+    margin-top: 1.75rem;
+    font-size: clamp(1.125rem, 1.6vw, 1.3125rem);
+    max-width: 34ch;
+    color: var(--tinta-suave);
+  }
+  .hero__acoes {
+    margin-top: 2.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem 1.75rem;
+  }
+  .nota {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    text-decoration: none;
+    line-height: 1.25;
+  }
+  .nota__num {
+    font-size: 2.25rem;
+    font-weight: 750;
+    letter-spacing: -0.04em;
+    color: var(--ameixa);
+  }
+  .nota__estrelas { color: var(--ouro); letter-spacing: .1em; font-size: .9375rem; }
+  .nota small { display: block; font-size: .875rem; color: var(--tinta-suave); }
+
+  .hero__foto { position: relative; align-self: end; }
+  .hero__foto img {
+    width: 100%;
+    max-width: 560px;
+    margin-left: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: 40% 20%;
+    /* funde as bordas da foto no fundo do estúdio */
+    -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent), linear-gradient(to left, #000 88%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to bottom, #000 82%, transparent), linear-gradient(to left, #000 88%, transparent);
+    mask-composite: intersect;
+  }
+
+  .faixa {
+    border-top: 1px solid var(--linha);
+    padding-block: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 2.5rem;
+    font-size: 1rem;
+    color: var(--tinta-suave);
+  }
+  .faixa strong { color: var(--tinta); font-weight: 600; }
+
+  /* Entrada única do hero */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero h1, .hero__sub, .hero__acoes { animation: sobe .9s cubic-bezier(.2,.7,.2,1) both; }
+    .hero__sub { animation-delay: .12s; }
+    .hero__acoes { animation-delay: .24s; }
+    .hero__foto img { animation: aparece 1.4s ease both; }
+    @keyframes sobe { from { opacity: 0; transform: translateY(18px); } }
+    @keyframes aparece { from { opacity: 0; } }
+  }
+
+  /* Seções */
+  .secao { padding-block: clamp(4.5rem, 10vw, 8.5rem); }
+  .intro { max-width: 46ch; margin-top: 1.25rem; color: var(--tinta-suave); }
+
+  /* Como posso te ajudar */
+  .ajuda { background: var(--papel); }
+  .ajuda__grade {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: clamp(2rem, 6vw, 6rem);
+  }
+  .temas { list-style: none; margin: 0; padding: 0; }
+  .temas li {
+    padding-block: 1.75rem;
+    border-top: 1px solid var(--linha);
+  }
+  .temas li:last-child { border-bottom: 1px solid var(--linha); }
+  .temas p { margin-top: .6rem; color: var(--tinta-suave); max-width: 52ch; }
+  .post {
+    margin: 2.5rem 0 0;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--ouro);
+    font-size: 1.375rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    color: var(--madeira);
+    max-width: 22ch;
+  }
+  .post cite { display: block; margin-top: .75rem; font-style: normal; font-size: .9375rem; font-weight: 400; color: var(--tinta-suave); letter-spacing: 0; }
+
+  /* Espaço seguro: o momento ousado da página */
+  .seguro {
+    background: var(--ameixa);
+    color: #F4E9EF;
+    position: relative;
+    overflow: hidden;
+  }
+  .seguro__orgulho {
+    display: flex;
+    height: 10px;
+  }
+  .seguro__orgulho i { flex: 1; }
+  .seguro h2 {
+    color: #fff;
+    font-size: clamp(2.75rem, 8vw, 7rem);
+    letter-spacing: -0.05em;
+    line-height: .92;
+    max-width: 12ch;
+  }
+  .seguro__grade {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: end;
+  }
+  .seguro__texto p + p { margin-top: 1.1rem; }
+  .seguro__texto { max-width: 46ch; font-size: 1.1875rem; }
+  .seguro__texto strong { color: #fff; font-weight: 600; }
+
+  /* Sobre */
+  .sobre__grade {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
+  }
+  .sobre__texto p { max-width: 58ch; }
+  .sobre__texto p + p { margin-top: 1.1rem; }
+  .crp {
+    margin-top: 2rem;
+    display: inline-block;
+    font-size: .9375rem;
+    color: var(--tinta-suave);
+    border: 1px solid var(--linha);
+    border-radius: 6px;
+    padding: .5em .85em;
+  }
+
+  /* Depoimentos */
+  .falas { background: var(--papel); }
+  .falas__topo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1.5rem;
+  }
+  .falas__lista {
+    margin-top: clamp(2.5rem, 6vw, 4.5rem);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+  }
+  .fala { margin: 0; }
+  .fala blockquote {
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    color: var(--ameixa);
+  }
+  .fala figcaption { margin-top: .9rem; font-size: .9375rem; color: var(--tinta-suave); }
+  .fala--g { grid-column: span 4; }
+  .fala--g blockquote { font-size: clamp(2rem, 4.4vw, 3.5rem); }
+  .fala--m { grid-column: span 2; align-self: end; }
+  .fala--m blockquote { font-size: clamp(1.5rem, 2.4vw, 2rem); color: var(--batom); }
+  .fala--p { grid-column: span 3; }
+  .fala--p blockquote { font-size: clamp(1.375rem, 2vw, 1.75rem); font-weight: 500; }
+
+  /* Horários e local */
+  .local__grade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  .semana {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+  .semana li {
+    border-radius: 10px;
+    padding: .85rem .25rem;
+    text-align: center;
+    font-size: .875rem;
+    line-height: 1.3;
+    background: transparent;
+    border: 1px dashed var(--linha);
+    color: #9C8E95;
+  }
+  .semana li b { display: block; font-size: 1.0625rem; font-weight: 650; }
+  .semana li.aberto {
+    background: var(--ameixa);
+    border: 1px solid var(--ameixa);
+    color: #F4E9EF;
+  }
+  .semana li.aberto b { color: #fff; }
+  .horas { margin-top: 1.5rem; list-style: none; padding: 0; }
+  .horas li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: .85rem;
+    border-bottom: 1px solid var(--linha);
+  }
+  .horas li span:last-child { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .horas li.fechado span:last-child { font-weight: 400; color: var(--tinta-suave); }
+  .local__info { margin-top: 2rem; display: grid; gap: 1rem; }
+  .local__info p { color: var(--tinta-suave); }
+  .local__info strong { color: var(--tinta); font-weight: 600; }
+
+  .mapa {
+    border-radius: 18px;
+    overflow: hidden;
+    min-height: 420px;
+    background: var(--linha);
+  }
+  .mapa iframe { width: 100%; height: 100%; min-height: 420px; border: 0; display: block; }
+  .endereco { margin-top: 1rem; font-size: 1rem; }
+  .endereco a { color: var(--batom); font-weight: 550; }
+
+  /* Fechamento */
+  .fim { background: var(--batom); color: #FBEFF4; text-align: left; }
+  .fim h2 { color: #fff; max-width: 16ch; font-size: clamp(2.5rem, 6.5vw, 5.25rem); letter-spacing: -0.045em; }
+  .fim p { margin-top: 1.5rem; max-width: 44ch; font-size: 1.1875rem; }
+  .fim .btn { margin-top: 2.25rem; }
+  .fim__assina { margin-top: 3.5rem; font-size: 1.0625rem; color: #F6D9E5; }
+
+  .rodape {
+    padding-block: 2rem;
+    font-size: .875rem;
+    color: var(--tinta-suave);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .75rem 2rem;
+  }
+  .rodape a { color: var(--batom); }
+
+  /* Botão flutuante no celular */
+  .flutuante {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+    display: none;
+    box-shadow: 0 10px 30px rgba(74, 22, 49, .35);
+  }
+
+  @media (max-width: 900px) {
+    .hero, .ajuda__grade, .seguro__grade, .sobre__grade, .local__grade { grid-template-columns: 1fr; }
+    .hero { gap: 0; }
+    .hero__foto { order: -1; }
+    .hero__foto img { max-width: 420px; margin-inline: auto; aspect-ratio: 5 / 4; object-position: 40% 8%; }
+    .hero__texto { padding-bottom: 3rem; }
+    .falas__lista { grid-template-columns: 1fr; }
+    .fala--g, .fala--m, .fala--p { grid-column: auto; }
+    .topo .btn { display: none; }
+    .flutuante { display: inline-flex; }
+    .fim { padding-bottom: 7rem; }
+  }
+  @media (max-width: 480px) {
+    .semana { gap: 3px; }
+    .semana li { font-size: .75rem; padding-inline: 0; }
+    .semana li b { font-size: .9375rem; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="zap" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.43 9.43 0 1 1 7.99 4.42zm8.02-17.45A11.27 11.27 0 0 0 12.05.75C5.8.75.72 5.83.72 12.08c0 2 .52 3.95 1.52 5.66L.62 23.25l5.65-1.48a11.3 11.3 0 0 0 5.77 1.47h.01c6.25 0 11.33-5.08 11.33-11.33 0-3.03-1.18-5.87-3.31-8.01z"/></symbol>
+</svg>
+
+<header class="wrap topo">
+  <a class="marca" href="#">Vilma Marinho<span>Psicóloga clínica em Salvador</span></a>
+  <a class="btn" href="https://wa.me/5571985009919?text=Ol%C3%A1%2C%20Vilma!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener">
+    <svg aria-hidden="true"><use href="#zap"/></svg>Agendar sessão
+  </a>
+</header>
+
+<main>
+  <section class="wrap" aria-labelledby="titulo">
+    <div class="hero">
+      <div class="hero__texto">
+        <h1 id="titulo">Um espaço acolhedor para você se reencontrar.</h1>
+        <p class="hero__sub">Psicoterapia para quem quer cuidar dos relacionamentos, se conhecer melhor e descobrir o próprio potencial. No Caminho das Árvores, com horários a partir das 7h.</p>
+        <div class="hero__acoes">
+          <a class="btn" href="https://wa.me/5571985009919?text=Ol%C3%A1%2C%20Vilma!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#zap"/></svg>Agendar pelo WhatsApp
+          </a>
+          <a class="nota" href="#depoimentos">
+            <span class="nota__num">5,0</span>
+            <span>
+              <span class="nota__estrelas" aria-label="5 de 5 estrelas">★★★★★</span>
+              <small>25 avaliações no Google</small>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="hero__foto">
+        <img src="assets/vilma.png" alt="Vilma Marinho sorrindo, de camisa branca, com a mão apoiada no queixo" width="640" height="640">
+      </div>
+    </div>
+    <div class="faixa">
+      <span><strong>Antes do trabalho:</strong> sessões a partir das 7h</span>
+      <span><strong>Aos sábados</strong> até as 14h</span>
+      <span><strong>Espaço seguro</strong> para pessoas LGBTQ+ e trans</span>
+    </div>
+  </section>
+
+  <section class="ajuda secao" aria-labelledby="ajuda-t">
+    <div class="wrap ajuda__grade">
+      <div>
+        <h2 id="ajuda-t">Como posso te ajudar</h2>
+        <p class="intro">Cada processo começa por uma conversa sobre o que está pesando agora. A partir daí, a gente encontra junto o caminho.</p>
+        <blockquote class="post">
+          Relações são baseadas em trocas, não por peso.
+          <cite>Do Instagram @psivilmamarinho</cite>
+        </blockquote>
+      </div>
+      <ul class="temas">
+        <li>
+          <h3>Relacionamentos</h3>
+          <p>Casamento, namoro, família, amizades. Para entender o que você leva para as suas relações e construir trocas mais leves e equilibradas.</p>
+        </li>
+        <li>
+          <h3>Autoconhecimento</h3>
+          <p>Para olhar para a sua história com mais clareza, reconhecer o que te move e enxergar o potencial que às vezes fica escondido.</p>
+        </li>
+        <li>
+          <h3>Momentos difíceis</h3>
+          <p>Separação, luto, ansiedade, mudanças que tiram o chão. Um lugar para atravessar a fase com apoio, no seu tempo.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="seguro" aria-labelledby="seguro-t">
+    <div class="seguro__orgulho" aria-hidden="true">
+      <i style="background:#E40303"></i><i style="background:#FF8C00"></i><i style="background:#FFED00"></i><i style="background:#008026"></i><i style="background:#004DFF"></i><i style="background:#750787"></i><i style="background:#5BCEFA"></i><i style="background:#F5A9B8"></i><i style="background:#FFFFFF"></i><i style="background:#F5A9B8"></i><i style="background:#5BCEFA"></i><i style="background:#613915"></i><i style="background:#000"></i>
+    </div>
+    <div class="wrap secao seguro__grade">
+      <h2 id="seguro-t">Aqui você pode ser quem você é.</h2>
+      <div class="seguro__texto">
+        <p>O consultório é um <strong>espaço seguro para pessoas LGBTQ+ e trans</strong>. Seu nome, seus pronomes e a sua história são respeitados desde a primeira mensagem.</p>
+        <p>Você não precisa explicar nem justificar quem é para ser bem cuidade. A terapia começa do ponto em que você está.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="sobre-t">
+    <div class="wrap sobre__grade">
+      <h2 id="sobre-t">Sobre a Vilma</h2>
+      <div class="sobre__texto">
+        <p>Sou Vilma Marinho, psicóloga clínica em Salvador. Acredito que a terapia funciona quando a pessoa se sente acolhida de verdade: ouvida sem pressa, sem julgamento e com atenção ao que é dela.</p>
+        <p>No consultório, o foco está nas relações e no autoconhecimento. Trabalho para que você saia de cada sessão se entendendo um pouco melhor e mais perto do seu potencial.</p>
+        <p>O ambiente foi pensado para ser tranquilo e confortável, e o atendimento é sempre com hora marcada, para que o seu horário seja só seu.</p>
+        <!-- TODO: substituir pelo número real do CRP -->
+        <p class="crp">CRP 03/00000</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="falas secao" id="depoimentos" aria-labelledby="falas-t">
+    <div class="wrap">
+      <div class="falas__topo">
+        <h2 id="falas-t">O que dizem as pacientes</h2>
+        <a class="nota" href="https://www.google.com/maps/search/?api=1&query=Vilma+Marinho+Psic%C3%B3loga+Cl%C3%ADnica+Salvador" target="_blank" rel="noopener">
+          <span class="nota__num">5,0</span>
+          <span>
+            <span class="nota__estrelas" aria-label="5 de 5 estrelas">★★★★★</span>
+            <small>Ver as 25 avaliações no Google</small>
+          </span>
+        </a>
+      </div>
+      <div class="falas__lista">
+        <figure class="fala fala--g">
+          <blockquote>“Obrigado por abrir meus olhos para o meu potencial.”</blockquote>
+          <figcaption>Avaliação no Google</figcaption>
+        </figure>
+        <figure class="fala fala--m">
+          <blockquote>“A pessoa certa na hora certa.”</blockquote>
+          <figcaption>Avaliação no Google</figcaption>
+        </figure>
+        <figure class="fala fala--p">
+          <blockquote>“Um ambiente acolhedor, bem organizado, que transmite conforto e tranquilidade.”</blockquote>
+          <figcaption>Avaliação no Google</figcaption>
+        </figure>
+        <figure class="fala fala--p">
+          <blockquote>“Me ajudou num momento difícil do meu casamento.”</blockquote>
+          <figcaption>Avaliação no Google</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="local-t">
+    <div class="wrap">
+      <h2 id="local-t">Horários e endereço</h2>
+      <p class="intro">Atendimento presencial, somente com hora marcada. Os horários cedo e aos sábados facilitam para quem trabalha.</p>
+      <div class="local__grade">
+        <div>
+          <ul class="semana" aria-label="Dias de atendimento">
+            <li><b>Dom</b>fechado</li>
+            <li><b>Seg</b>fechado</li>
+            <li><b>Ter</b>fechado</li>
+            <li><b>Qua</b>fechado</li>
+            <li class="aberto"><b>Qui</b>7h–19h</li>
+            <li class="aberto"><b>Sex</b>7h–19h</li>
+            <li class="aberto"><b>Sáb</b>7h–14h</li>
+          </ul>
+          <ul class="horas">
+            <li><span>Quinta e sexta</span><span>07:00 às 19:00</span></li>
+            <li><span>Sábado</span><span>07:00 às 14:00</span></li>
+            <li class="fechado"><span>Domingo a quarta</span><span>Fechado</span></li>
+          </ul>
+          <div class="local__info">
+            <p><strong>Acessibilidade:</strong> estacionamento acessível para cadeira de rodas.</p>
+            <p><strong>Como agendar:</strong> mande uma mensagem no WhatsApp (71) 98500-9919 e combinamos o melhor horário.</p>
+          </div>
+        </div>
+        <div>
+          <div class="mapa">
+            <iframe title="Mapa do consultório na Rua Alceu Amoroso Lima, 470" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=R.+Alceu+Amoroso+Lima,+470+-+Caminho+das+%C3%81rvores,+Salvador+-+BA,+41820-770&output=embed"></iframe>
+          </div>
+          <p class="endereco">R. Alceu Amoroso Lima, 470, Caminho das Árvores, Salvador, BA, 41820-770.
+            <a href="https://www.google.com/maps/dir/?api=1&destination=R.+Alceu+Amoroso+Lima,+470,+Salvador+-+BA" target="_blank" rel="noopener">Abrir rota no Maps</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fim secao" aria-labelledby="fim-t">
+    <div class="wrap">
+      <h2 id="fim-t">Que tal começar esta semana?</h2>
+      <p>Mande uma mensagem contando um pouco do que você procura. Eu respondo com os horários disponíveis de quinta a sábado.</p>
+      <a class="btn btn--claro" href="https://wa.me/5571985009919?text=Ol%C3%A1%2C%20Vilma!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#zap"/></svg>Agendar pelo WhatsApp
+      </a>
+      <p class="fim__assina">Um cheiro, e até breve.<br>Vilma</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap rodape">
+  <span>Vilma Marinho, psicóloga clínica. CRP 03/00000</span>
+  <span><a href="https://instagram.com/psivilmamarinho" target="_blank" rel="noopener">@psivilmamarinho</a> no Instagram</span>
+</footer>
+
+<a class="btn flutuante" href="https://wa.me/5571985009919?text=Ol%C3%A1%2C%20Vilma!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+  <svg aria-hidden="true"><use href="#zap"/></svg>Agendar
+</a>
+
+</body>
+</html>
